@@ -13,7 +13,7 @@ module.exports = [
       filename: 'bundle.js',
     },
     module: {
-      rules: [{
+      loaders: [{
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
@@ -39,7 +39,7 @@ module.exports = [
       filename: 'bundle.css',
     },
     module: {
-      rules: [
+      loaders: [
         {
           test: /\.css$/,
           loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }),
