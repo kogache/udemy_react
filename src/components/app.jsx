@@ -10,9 +10,19 @@ class App extends Component {
     };
   }
 
+  handleNameChange(name) {
+    this.setState({ name });
+  }
+
   render() {
     return (
       <div>
+        <input
+          type="text"
+          value={this.state.name}
+          onChange={e => this.handleNameChange(e.target.value)}
+        />
+        <button onClick={() => this.handleNameChange('Bob')}>I am Bob</button>
         <Greeting name={this.state.name} />
       </div>
     );
