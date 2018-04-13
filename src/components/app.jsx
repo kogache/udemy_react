@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import SearchForm from './SearchForm';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -7,13 +8,15 @@ class App extends Component {
     };
   }
 
-  handleNameChange(name) {
-    this.setState({ name });
+  handlePlaceSubmit(place) {
+    console.log(place);
   }
 
   render() {
     return (
       <div>
+        <h1>緯度経度検索</h1>
+        <SearchForm onSubmit={place => this.handlePlaceSubmit(place)}/>
       </div>
     );
   }
